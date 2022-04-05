@@ -1,0 +1,12 @@
+[package]
+name = "base64"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[dependencies]
+base64 = "0.13.0"
+wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen" }
