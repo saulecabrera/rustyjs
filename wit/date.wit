@@ -1,0 +1,1 @@
+fmt: function(d1: string, d2: string) -> string

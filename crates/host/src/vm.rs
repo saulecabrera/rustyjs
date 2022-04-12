@@ -78,7 +78,7 @@ impl<'a> VM<'a> {
 
     fn load_std() -> STD {
         let mut std = STD::new();
-        std.insert("base64".into(), include_bytes!("base64.wasm"));
+        std.insert("date".into(), include_bytes!("date.wasm"));
         std
     }
 }

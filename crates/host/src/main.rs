@@ -20,7 +20,7 @@ fn main() -> Result<()> {
 
     sync::add_to_linker(&mut linker, |c: &mut context::Context| &mut c.wasi)?;
 
-    vm.load("base64")?
+    vm.load("date")?
         .instantiate_std(&mut store, &mut linker)?;
 
     let guest = vm.compile(&module)?;
