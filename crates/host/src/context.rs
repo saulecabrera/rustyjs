@@ -1,5 +1,4 @@
-use wasmtime::ResourceLimiter;
-use wasmtime_wasi::{sync, WasiCtx, WasiCtxBuilder};
+use wasmtime_wasi::{WasiCtx, WasiCtxBuilder};
 
 pub struct Context {
     pub wasi: WasiCtx,

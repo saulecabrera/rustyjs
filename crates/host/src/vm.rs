@@ -9,7 +9,6 @@ type STD = HashMap<String, &'static [u8]>;
 pub struct VM<'a> {
     pub engine: Engine,
     pub modules: HashMap<&'a str, Module>,
-    config: Config,
     std: STD,
 }
 
@@ -21,7 +20,6 @@ impl<'a> Default for VM<'a> {
 
         Self {
             engine: Engine::new(&config).unwrap(),
-            config,
             modules: HashMap::new(),
             std: Self::load_std(),
         }
@@ -29,13 +27,6 @@ impl<'a> Default for VM<'a> {
 }
 
 impl<'a> VM<'a> {
-    pub fn new(config: Config) -> Self {
-        Self {
-            config,
-            ..Self::default()
-        }
-    }
-
     pub fn instantiate_std(
         &self,
         store: &mut Store<context::Context>,
